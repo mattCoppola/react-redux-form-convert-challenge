@@ -1,13 +1,16 @@
 import React from 'react';
-// import redux-form
+// import redux-form {reduxForm, Field}
 import {reduxForm, Field} from 'redux-form';
-
+// change component to a class
 export class ContactForm extends React.Component {
+    // onSubmit method to console.log values
     onSubmit(values) {
       console.log(values);
     }
-
+    // render function
     render() {
+      // add onSubmit method to form tag
+      // change input fields to Field and add component=""
       return (
           <form
             onSubmit={this.props.handleSubmit(values =>
@@ -27,6 +30,7 @@ export class ContactForm extends React.Component {
 
 }
 
+// export default reduxForm({form: ''})(Component-Name)
 export default reduxForm({
   form: 'contact'
 })(ContactForm);
